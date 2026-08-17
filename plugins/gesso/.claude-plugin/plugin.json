@@ -1,0 +1,30 @@
+{
+  "name": "gesso",
+  "displayName": "Gesso",
+  "version": "0.1.0",
+  "description": "Drive Gesso — projects, tasks, time, capture, contacts and read-only finance — from Claude. Bundles the MCP tools and the skill that knows how to use them.",
+  "author": {
+    "name": "Possible Worlds",
+    "url": "https://github.com/PossibleWorldsDotSpace"
+  },
+  "homepage": "https://github.com/PossibleWorldsDotSpace/gesso-plugin",
+  "repository": "https://github.com/PossibleWorldsDotSpace/gesso-plugin",
+  "license": "MIT",
+  "keywords": ["gesso", "mcp", "project-management", "freelance", "creative"],
+
+  "userConfig": {
+    "origin": {
+      "type": "string",
+      "title": "Your Gesso URL",
+      "description": "The address you use to open Gesso, with no trailing slash — for example https://gesso.example.com. Gesso is self-hosted, so this differs for everyone; there is no default that would be right.",
+      "required": true
+    }
+  },
+
+  "mcpServers": {
+    "gesso": {
+      "type": "http",
+      "url": "${user_config.origin}/mcp"
+    }
+  }
+}

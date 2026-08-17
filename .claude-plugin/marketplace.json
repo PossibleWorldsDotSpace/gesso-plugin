@@ -1,0 +1,20 @@
+{
+  "name": "possibleworlds",
+  "description": "Plugins from Possible Worlds — makers of Gesso, the practice-management work OS for freelance creatives.",
+  "owner": {
+    "name": "Possible Worlds",
+    "url": "https://github.com/PossibleWorldsDotSpace"
+  },
+  "plugins": [
+    {
+      "name": "gesso",
+      "source": "./plugins/gesso",
+      "description": "Drive Gesso from Claude — projects, tasks, time, capture, contacts and read-only finance.",
+      "author": { "name": "Possible Worlds" },
+      "homepage": "https://github.com/PossibleWorldsDotSpace/gesso-plugin",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": ["gesso", "mcp", "project-management", "freelance"]
+    }
+  ]
+}
