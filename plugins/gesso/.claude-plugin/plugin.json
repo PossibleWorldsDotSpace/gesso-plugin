@@ -15,9 +15,10 @@
   "userConfig": {
     "origin": {
       "type": "string",
-      "title": "Your Gesso URL",
-      "description": "The address you use to open Gesso, with no trailing slash — for example https://gesso.example.com. Gesso is self-hosted, so this differs for everyone; there is no default that would be right.",
-      "required": true
+      "title": "Gesso URL",
+      "description": "Leave blank unless you run your own Gesso. Override only to point at a self-hosted deployment, with no trailing slash — for example https://gesso.example.com.",
+      "required": false,
+      "default": "https://ubuntu-2404-noble-amd64-base.taildb1547.ts.net:7443"
     }
   },
 
