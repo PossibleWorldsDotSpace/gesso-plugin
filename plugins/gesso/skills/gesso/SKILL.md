@@ -1,7 +1,9 @@
 ---
 name: gesso
-description: All interactions with Gesso, the practice-management work OS for freelance creatives — tasks, projects, phases, deliverables, milestones, time tracking, inbox capture, contacts, notes, and read-only finance. Use whenever someone wants to add, update, reschedule or complete work; create or amend a project; log time; capture a thought; look up a client; or ask what is on today. Also handles natural-language capture ("I need to…", "remind me to…", "I've just finished X", "move X to Tuesday").
-when_to_use: 'Trigger on: "remind me", "I need to", "add a task", "done X", "mark X complete", "move X to [day]", "log time", "what''s on today", "what am I working on", "how much do I have outstanding", "who is [client]". Do NOT trigger for questions about the Gesso codebase itself — that is ordinary development work.'
+description: All interactions with Gesso, the practice-management work OS for freelance creatives — tasks, projects, phases, deliverables, milestones, time tracking, inbox capture, contacts, notes, and read-only finance. Use whenever someone wants to add, update, reschedule or complete work; create or amend a project; log time; capture a thought; look up a client; or ask what is on today. Also handles natural-language capture ("I need to…", "remind me to…", "I've just finished X", "move X to Tuesday"). Trigger on phrasings like "remind me", "add a task", "mark X complete", "move X to Tuesday", "log time", "what's on today", "who is [client]". Do NOT trigger for questions about the Gesso codebase itself — that is ordinary development work.
+compatibility: Requires the Gesso MCP server to be configured in the client — the tools are the only way in; there is no fallback.
+metadata:
+  author: possible-worlds
 ---
 
 # Gesso
