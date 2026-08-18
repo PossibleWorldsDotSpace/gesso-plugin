@@ -22,6 +22,8 @@
     }
   },
 
+  "_originNote": "The default origin is the STAGING tailnet host, reachable only from the Possible Worlds tailnet. Change it to https://getgesso.app on first production deploy — until then a public installer gets a server that cannot resolve. Self-hosters override it via the origin userConfig option.",
+
   "mcpServers": {
     "gesso": {
       "type": "http",

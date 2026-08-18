@@ -8,11 +8,11 @@ for freelance creatives — from Claude Code or Claude Desktop.
 /plugin install gesso@possibleworlds
 ```
 
-You will be asked for **your Gesso URL** — the address you use to open the app. Gesso is
-self-hosted, so this differs for everyone and there is no default that would be right.
-
 Then run `/mcp`, pick `gesso`, and approve in the browser. No API key to mint, no
-environment variable to export.
+environment variable to export, and nothing to configure.
+
+> **Running your own Gesso?** Set the `origin` option to your deployment's address, with
+> no trailing slash. Everyone else can leave it alone.
 
 ## What you get
 
