@@ -1,27 +1,31 @@
 # Maintaining this plugin
 
-## The default origin is staging, and will break for the public
+## The default origin — now public, was the tailnet
 
 `plugins/gesso/.claude-plugin/plugin.json` defaults `userConfig.origin` to:
 
 ```
-https://ubuntu-2404-noble-amd64-base.taildb1547.ts.net:7443
+https://app.getgesso.app
 ```
 
-That is a **tailnet address**. It resolves only from the Possible Worlds tailnet, so
-anyone else installing this plugin today gets a server they cannot reach. The failure is
-quiet in the worst way: the plugin installs cleanly, `claude mcp list` shows the server,
-and it simply never connects.
+**Changed 10 September 2026**, from the tailnet address
+`https://ubuntu-2404-noble-amd64-base.taildb1547.ts.net:7443`. That old default resolved
+only from the Possible Worlds tailnet, so anyone else installing the plugin got a server
+they could not reach — and the failure was quiet in the worst way: the plugin installs
+cleanly, `claude mcp list` shows the server, and it simply never connects.
 
-This is deliberate and temporary. Gesso is pre-launch, the tailnet host is the only
-deployment, and asking every user for a URL is wrong for a product that will have exactly
-one origin.
+Note the host is **`app.getgesso.app`**, not bare `getgesso.app`. An earlier version of
+this file named the apex domain; that was wrong. Verified 10 Sept 2026:
+`app.getgesso.app/mcp` answers `401` (server present, authentication required) and
+`/health` answers `200`, while the apex does not resolve at all. The apex is the marketing
+site's eventual home, not the app's.
 
-**On the first production deploy, change that default to `https://getgesso.app`.** One
-line, no other change — self-hosters keep overriding it through the same option.
+Self-hosters keep overriding this through the same option — that is the whole reason it is
+a `userConfig` entry rather than a hardcoded URL.
 
-Until then, treat the marketplace as effectively private even though the repository is
-public.
+> **Installed copies do not pick this up.** The default is read at install time, so an
+> existing install keeps the old tailnet URL until the plugin is reinstalled (or the user
+> sets `origin` explicitly). Anyone who installed before 10 Sept 2026 needs to reinstall.
 
 ## Why `origin` stays a userConfig option
 

@@ -18,7 +18,7 @@
       "title": "Gesso URL",
       "description": "Leave blank unless you run your own Gesso. Override only to point at a self-hosted deployment, with no trailing slash — for example https://gesso.example.com.",
       "required": false,
-      "default": "https://ubuntu-2404-noble-amd64-base.taildb1547.ts.net:7443"
+      "default": "https://app.getgesso.app"
     }
   },
 
