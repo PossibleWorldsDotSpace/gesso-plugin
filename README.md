@@ -16,7 +16,7 @@ environment variable to export, and nothing to configure.
 
 ## What you get
 
-**44 tools** — projects, tasks, phases, deliverables, milestones, time tracking, inbox
+**149 tools** — projects, tasks, phases, deliverables, milestones, time tracking, inbox
 capture, contacts, notes, global search, and finance (read-only, apart from logging and correcting expenses). Plus two aggregate reads,
 `gesso_today` and `gesso_project_context`, that answer "what's on today" and "tell me
 about this project" in one call instead of five.

@@ -14,8 +14,10 @@ written here if the two ever disagree.** This file exists for the things a JSON 
 cannot say.
 
 If the `gesso_*` tools are not available, the MCP server is not configured in this client.
-**Stop and say so**, pointing at `SETUP.md` beside this file. Do not fall back to `curl` —
-the API key is deliberately not in this file.
+**Stop and say so.** If Gesso was installed as a plugin, the person should check the
+plugin's `origin` setting and `claude mcp list`; if it was installed by hand, `SETUP.md`
+(shipped beside this file in the repo, not in the plugin) explains how to connect. Do not
+fall back to `curl` — the API key is deliberately not in this file.
 
 ---
 
@@ -94,6 +96,11 @@ A task attaches to exactly one parent, and it need not be a project: pass **one*
 "draft the budget for the Netflix deal" is a task on that deal, not a floating one — take
 the id from a `gesso_search` hit's `type` so a deal id never lands in the project slot.
 
+**Inbox triage:** `gesso_list_inbox` shows captured items not yet dealt with. Turning one
+into a task is two steps: `gesso_create_task` first, then `gesso_update_inbox_item` with
+`resolvedTo` (`task`, `project`, `reference` or `discarded`) and `processedAt`.
+`gesso_update_inbox_item` only records the outcome; it creates nothing.
+
 **Prefer capture when you would otherwise be guessing a project.** A misfiled task is
 worse than an unfiled one: an unfiled item is visibly waiting in the inbox, whereas a task
 on the wrong project silently distorts that project.
@@ -142,6 +149,14 @@ would otherwise have to invent.
   today. The right answer to "what's on", "what should I do now", a morning standup.
 - **`gesso_project_context`** — a project with its phases, tasks, deliverables and
   milestones. The right answer to any general question about a project.
+- **`gesso_agenda_today`** is the lower-level agenda alone — time blocks, unscheduled
+  tasks, projects in focus, deadline radar, upcoming milestones. It has no nominated
+  priority and no overdue list, and it leaves out calendar events. Use `gesso_today`
+  unless you want only that.
+- **Daily priority:** `gesso_set_daily_priority` takes a `taskId`. There is one per day and
+  setting it replaces the current one, so confirm before overwriting a priority the person
+  already chose. If `gesso_today` says `dailyPriorityIsPrivate: true`, a private Life
+  priority is set: ask before replacing it.
 
 Two things to respect in their output:
 
