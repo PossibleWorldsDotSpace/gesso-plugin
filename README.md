@@ -17,7 +17,7 @@ environment variable to export, and nothing to configure.
 ## What you get
 
 **44 tools** — projects, tasks, phases, deliverables, milestones, time tracking, inbox
-capture, contacts, notes, global search, and read-only finance. Plus two aggregate reads,
+capture, contacts, notes, global search, and finance (read-only, apart from logging and correcting expenses). Plus two aggregate reads,
 `gesso_today` and `gesso_project_context`, that answer "what's on today" and "tell me
 about this project" in one call instead of five.
 
@@ -41,7 +41,7 @@ you working tools with none of the guardrails, and nothing tells you what is mis
 - **Delete anything.** Tasks are completed, projects are iced or completed.
 - **Bulk-edit, or touch payments, memberships or org settings.**
 
-Finance is **read-only** and off unless you grant it during authorisation.
+Finance is **read-only, apart from logging and correcting expenses**, and off unless you grant it during authorisation.
 
 ## Requirements
 
