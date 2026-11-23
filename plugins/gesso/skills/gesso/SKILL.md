@@ -113,6 +113,20 @@ on the wrong project silently distorts that project.
 "Email Sarah at the Tate" involves two records: the Tate is a contact, Sarah is a contact
 person affiliated with it.
 
+A person's organisation is an **affiliation**, not a field on the person.
+`gesso_update_contact_person` cannot change it. Tools:
+
+- **`gesso_list_person_affiliations`** — a person's organisations, current first
+  (`endedAt: null` means current).
+- **`gesso_add_person_affiliation`** — join a person to an organisation (`contactId`,
+  optional `role`, dates as ISO datetimes). Works for a person with no organisation.
+- **`gesso_update_affiliation`** — change role, dates or primary.
+- **`gesso_end_affiliation`** — the person left; history stays.
+
+To move someone, **end the old affiliation, then add the new one**. To attach an
+unaffiliated person, just add one. Creating a person with `contactId` already adds the
+opening affiliation.
+
 ### Notes vs capture
 
 A "note" is a **Doc** now (the Note model was retired) — create one, then attach it.
